@@ -1,0 +1,133 @@
+$pink-soft: hsl(333, 80%, 67%);
+$magenta-dark: hsl(300, 43%, 22%);
+$magenta-dark-grayish: hsl(303, 10%, 53%);
+$magenta-light-grayish: hsl(300, 24%, 96%);
+$white-snow: hsl(0, 100%, 99%);
+
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  font-family: 'Spartan', sans-serif;
+  background-color: $white-snow;
+}
+
+%pseudo-bg {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  background-size: 64% 100%;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  @extend %pseudo-bg;
+  top: 0;
+  height: 34vh;
+  background-image: url("../images/bg-pattern-top-mobile.svg");
+}
+
+body::after {
+  @extend %pseudo-bg;
+  bottom: 0;
+  height: 84vh;
+  background-image: url("../images/bg-pattern-bottom-mobile.svg");
+  background-position: right;
+}
+
+main {
+  padding: 80px 16px;
+}
+
+h1 {
+  color: $magenta-dark;
+  text-align: center;
+  margin-top: 0;
+}
+
+h1 + p {
+  color: $magenta-dark-grayish;
+  text-align: center;
+}
+
+main > section {
+  margin: 64px 0;
+}
+
+section > section {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  background-color: $magenta-light-grayish;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+section > section:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+section > p {
+  color: $magenta-dark;
+  font-weight: 700;
+}
+
+article {
+  background-color: $magenta-dark;
+  padding: 24px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+article:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+article > header {
+  display: flex;
+  margin: 0 0 32px;
+}
+
+article > header > img {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  margin: 0 24px 0 0;
+}
+
+article > header > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+article > header > div > p:first-of-type {
+  color: $white-snow;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+article > header > div > p:last-of-type {
+  color: $pink-soft;
+  font-weight: 400;
+  margin: 0;
+}
+
+article > blockquote {
+  color: $white-snow;
+  margin: 0;
+}
+
+
+
+
+
